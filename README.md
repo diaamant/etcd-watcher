@@ -1,7 +1,7 @@
 # etcd-watcher
 Async Etcd Watcher and Subprocess Manager
 
-This project is an asynchronous watcher for etcd using the `aetcd` client library. It listens for changes in a specific etcd key (`rec-service`), and based on the value (`start` or `stop`), it triggers or stops a subprocess. The script also includes a dummy work task to demonstrate concurrent task execution.
+This project is an asynchronous watcher for etcd using the `aetcd` client library. It listens for changes in a specific etcd key (`work-service`), and based on the value (`start` or `stop`), it triggers or stops a subprocess. The script also includes a dummy work task to demonstrate concurrent task execution.
 
 ## Table of Contents
 

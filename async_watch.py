@@ -13,7 +13,7 @@ class ErrorCancelTasks(Exception):
 
 async def watch_callback(event):
     """Callback to handle etcd watch events."""
-    if event.kind == aetcd.rtypes.EventKind.PUT and event.kv.key == b"rec-service":
+    if event.kind == aetcd.rtypes.EventKind.PUT and event.kv.key == b"work-service":
         if event.kv.value == b"start":
             logger.info("Starting process...")
             try:
@@ -29,13 +29,13 @@ async def watch_callback(event):
 
 
 async def watch_event():
-    """Watches etcd for key 'rec-service'."""
+    """Watches etcd for key 'work-service'."""
     client = aetcd.Client()
 
-    logger.info('Watching for "rec-service"...')
+    logger.info('Watching for "work-service"...')
 
     try:
-        watch = await client.watch(b"rec-service")
+        watch = await client.watch(b"work-service")
         async for event in watch:
             await watch_callback(event)
     except Exception as e:
